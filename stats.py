@@ -12,5 +12,15 @@ def get_char_counts(text):
             character_count[char] = 1
     return character_count
 
-def get_sorted_list(dict)
-    
+def sort_key(item):
+    return item["num"]
+
+def get_sorted_list(chars_dict):
+    sort_list = []
+    for character in chars_dict:
+            new_dict = {}
+            new_dict['char'] = character
+            new_dict['num'] = chars_dict[character]
+            sort_list.append(new_dict)
+    sort_list.sort(reverse=True, key=sort_key)
+    return sort_list
